@@ -40,7 +40,7 @@ const Layout = () => {
             <CssBaseline />
             <Container maxWidth='md' className={styles.container}>
                 <Header
-                    title='Chuck Norris Jokes'
+                    title='Chuck Norris Funny Jokes'
                     changeTab={changeTab}
                     currentTab={currentTab}
                 />
