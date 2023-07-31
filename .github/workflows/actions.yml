@@ -16,7 +16,6 @@ jobs:
                 node-version: [16.x]
 
         steps:
-            - name: Checkout
             - uses: actions/checkout@v3
 
             - name: Use Node.js ${{ matrix.node-version }}
@@ -25,14 +24,14 @@ jobs:
                   node-version: ${{ matrix.node-version }}
 
             - name: Build
-                run: npm install
+              run: npm install
 
             - name: Lint
-                run: npm run lint
+              run: npm run lint
 
             - name: Deploy
-                run: |
-                    git config --global user.name 'andevpromax'
-                    git config --global user.email 'positko.andrei@gmail.com'
-                    git remote set-url origin https://x-access-token:${{ secrets.TOKEN }}@github.com/${{ github.repository }}
-                    npm run deploy
+              run: |
+                  git config --global user.name 'andevpromax'
+                  git config --global user.email 'positko.andrei@gmail.com'
+                  git remote set-url origin https://x-access-token:${{ secrets.TOKEN }}@github.com/${{ github.repository }}
+                  npm run deploy
